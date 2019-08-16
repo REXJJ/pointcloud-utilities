@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rex/Desktop/GIT/Debugging_Utilities/pcl_utils.cpp" "/home/rex/Desktop/GIT/Debugging_Utilities/build/CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o"
+  "/home/rex/Desktop/GIT/PCL_Utilities/src/main.cpp" "/home/rex/Desktop/GIT/PCL_Utilities/build/CMakeFiles/pcl_utils.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -45,6 +45,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/jsoncpp"
   "/usr/include/python2.7"
   "/usr/include/tcl"
+  "../include"
   "/usr/local/include/pcl-1.9"
   "/usr/include/eigen3"
   "/usr/include/ni"

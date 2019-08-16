@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rex/Desktop/GIT/Debugging_Utilities
+CMAKE_SOURCE_DIR = /home/rex/Desktop/GIT/PCL_Utilities
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rex/Desktop/GIT/Debugging_Utilities/build
+CMAKE_BINARY_DIR = /home/rex/Desktop/GIT/PCL_Utilities/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pcl_utils.dir/depend.make
@@ -57,38 +57,38 @@ include CMakeFiles/pcl_utils.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/pcl_utils.dir/flags.make
 
-CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o: CMakeFiles/pcl_utils.dir/flags.make
-CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o: ../pcl_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rex/Desktop/GIT/Debugging_Utilities/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o -c /home/rex/Desktop/GIT/Debugging_Utilities/pcl_utils.cpp
+CMakeFiles/pcl_utils.dir/src/main.cpp.o: CMakeFiles/pcl_utils.dir/flags.make
+CMakeFiles/pcl_utils.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rex/Desktop/GIT/PCL_Utilities/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pcl_utils.dir/src/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pcl_utils.dir/src/main.cpp.o -c /home/rex/Desktop/GIT/PCL_Utilities/src/main.cpp
 
-CMakeFiles/pcl_utils.dir/pcl_utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pcl_utils.dir/pcl_utils.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rex/Desktop/GIT/Debugging_Utilities/pcl_utils.cpp > CMakeFiles/pcl_utils.dir/pcl_utils.cpp.i
+CMakeFiles/pcl_utils.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pcl_utils.dir/src/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rex/Desktop/GIT/PCL_Utilities/src/main.cpp > CMakeFiles/pcl_utils.dir/src/main.cpp.i
 
-CMakeFiles/pcl_utils.dir/pcl_utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pcl_utils.dir/pcl_utils.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rex/Desktop/GIT/Debugging_Utilities/pcl_utils.cpp -o CMakeFiles/pcl_utils.dir/pcl_utils.cpp.s
+CMakeFiles/pcl_utils.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pcl_utils.dir/src/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rex/Desktop/GIT/PCL_Utilities/src/main.cpp -o CMakeFiles/pcl_utils.dir/src/main.cpp.s
 
-CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.requires:
+CMakeFiles/pcl_utils.dir/src/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.requires
+.PHONY : CMakeFiles/pcl_utils.dir/src/main.cpp.o.requires
 
-CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.provides: CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.requires
-	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.provides.build
-.PHONY : CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.provides
+CMakeFiles/pcl_utils.dir/src/main.cpp.o.provides: CMakeFiles/pcl_utils.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/pcl_utils.dir/src/main.cpp.o.provides
 
-CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.provides.build: CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o
+CMakeFiles/pcl_utils.dir/src/main.cpp.o.provides.build: CMakeFiles/pcl_utils.dir/src/main.cpp.o
 
 
 # Object files for target pcl_utils
 pcl_utils_OBJECTS = \
-"CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o"
+"CMakeFiles/pcl_utils.dir/src/main.cpp.o"
 
 # External object files for target pcl_utils
 pcl_utils_EXTERNAL_OBJECTS =
 
-pcl_utils: CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o
+pcl_utils: CMakeFiles/pcl_utils.dir/src/main.cpp.o
 pcl_utils: CMakeFiles/pcl_utils.dir/build.make
 pcl_utils: /usr/local/lib/libpcl_stereo.so
 pcl_utils: /usr/local/lib/libpcl_recognition.so
@@ -310,7 +310,7 @@ pcl_utils: /usr/lib/x86_64-linux-gnu/libnetcdf.so
 pcl_utils: /usr/lib/x86_64-linux-gnu/libpython2.7.so
 pcl_utils: /usr/lib/libgl2ps.so
 pcl_utils: CMakeFiles/pcl_utils.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rex/Desktop/GIT/Debugging_Utilities/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable pcl_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rex/Desktop/GIT/PCL_Utilities/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable pcl_utils"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pcl_utils.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -318,7 +318,7 @@ CMakeFiles/pcl_utils.dir/build: pcl_utils
 
 .PHONY : CMakeFiles/pcl_utils.dir/build
 
-CMakeFiles/pcl_utils.dir/requires: CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o.requires
+CMakeFiles/pcl_utils.dir/requires: CMakeFiles/pcl_utils.dir/src/main.cpp.o.requires
 
 .PHONY : CMakeFiles/pcl_utils.dir/requires
 
@@ -327,6 +327,6 @@ CMakeFiles/pcl_utils.dir/clean:
 .PHONY : CMakeFiles/pcl_utils.dir/clean
 
 CMakeFiles/pcl_utils.dir/depend:
-	cd /home/rex/Desktop/GIT/Debugging_Utilities/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rex/Desktop/GIT/Debugging_Utilities /home/rex/Desktop/GIT/Debugging_Utilities /home/rex/Desktop/GIT/Debugging_Utilities/build /home/rex/Desktop/GIT/Debugging_Utilities/build /home/rex/Desktop/GIT/Debugging_Utilities/build/CMakeFiles/pcl_utils.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rex/Desktop/GIT/PCL_Utilities/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rex/Desktop/GIT/PCL_Utilities /home/rex/Desktop/GIT/PCL_Utilities /home/rex/Desktop/GIT/PCL_Utilities/build /home/rex/Desktop/GIT/PCL_Utilities/build /home/rex/Desktop/GIT/PCL_Utilities/build/CMakeFiles/pcl_utils.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pcl_utils.dir/depend
 

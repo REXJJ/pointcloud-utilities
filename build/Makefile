@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rex/Desktop/GIT/Debugging_Utilities
+CMAKE_SOURCE_DIR = /home/rex/Desktop/GIT/PCL_Utilities
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rex/Desktop/GIT/Debugging_Utilities/build
+CMAKE_BINARY_DIR = /home/rex/Desktop/GIT/PCL_Utilities/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rex/Desktop/GIT/Debugging_Utilities/build/CMakeFiles /home/rex/Desktop/GIT/Debugging_Utilities/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rex/Desktop/GIT/PCL_Utilities/build/CMakeFiles /home/rex/Desktop/GIT/PCL_Utilities/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rex/Desktop/GIT/Debugging_Utilities/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rex/Desktop/GIT/PCL_Utilities/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ pcl_utils/fast:
 	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/build
 .PHONY : pcl_utils/fast
 
-pcl_utils.o: pcl_utils.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : pcl_utils.o
+.PHONY : src/main.o
 
 # target to build an object file
-pcl_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/pcl_utils.cpp.o
-.PHONY : pcl_utils.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-pcl_utils.i: pcl_utils.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : pcl_utils.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-pcl_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/pcl_utils.cpp.i
-.PHONY : pcl_utils.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-pcl_utils.s: pcl_utils.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : pcl_utils.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-pcl_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/pcl_utils.cpp.s
-.PHONY : pcl_utils.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/pcl_utils.dir/build.make CMakeFiles/pcl_utils.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... pcl_utils"
-	@echo "... pcl_utils.o"
-	@echo "... pcl_utils.i"
-	@echo "... pcl_utils.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
