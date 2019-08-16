@@ -38,7 +38,7 @@
 using namespace std;
 using namespace pcl;
 
-class pcl_utilities
+class PCLUtilities
 {  
 public:
 

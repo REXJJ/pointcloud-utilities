@@ -54,10 +54,10 @@ int main()
 
    std::cout<<"Here"<<endl;
 
-   vector<vector<double> > v = pcl_utilities::pclToVector<PointXYZRGB>(cloud_np);
+   vector<vector<double> > v = PCLUtilities::pclToVector<PointXYZRGB>(cloud_np);
    std::cout<<v.size()<<endl;
    
-   pcl_utilities::pclToXYZ<PointXYZRGB>(cloud_np,"hello.csv");
+   PCLUtilities::pclToXYZ<PointXYZRGB>(cloud_np,"hello.csv");
   
    return (0);
 }
