@@ -43,21 +43,27 @@ int main()
       PCL_ERROR ("Couldn't read file test_pcd.pcd \n");
       return (-1);
    }
-   std::cout << "Loaded "
-            << cloud->width * cloud->height
-            << " data points from test_pcd.pcd with the following fields: "
-            << std::endl;
    pcl::PointCloud<pcl::PointXYZRGB> cloud_np;
 
    for(size_t i=0;i<cloud->points.size();i++)
    	cloud_np.push_back(cloud->points[i]);
 
-   std::cout<<"Here"<<endl;
 
-   vector<vector<double> > v = PCLUtilities::pclToVector<PointXYZRGB>(cloud_np);
-   std::cout<<v.size()<<endl;
-   
-   PCLUtilities::pclToXYZ<PointXYZRGB>(cloud_np,"hello.csv");
-  
+   for(size_t i=0;i<cloud_np.points.size();i++)
+   {
+      for(size_t j=0;j<sizeof(cloud_np.points[i])/sizeof(float);j++)
+      {
+         float x;
+         if(j==4) continue;
+         if(j<4){
+         memcpy(&x,&cloud_np.points[i]+sizeof(float)*j,sizeof(float));
+         std::cout<<x<<" ";
+      }
+         uchar y;
+         memcpy(&y,&cloud_np.points[i]+sizeof(uchar)*j,sizeof(uchar));
+         std::cout<<y<<" ";
+      }
+      std::cout<<endl;
+   }
    return (0);
 }

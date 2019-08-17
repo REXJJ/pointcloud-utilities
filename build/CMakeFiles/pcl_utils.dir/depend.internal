@@ -217,7 +217,14 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/include/eigen3/unsupported/Eigen/src/NumericalDiff/NumericalDiff.h
  /usr/include/vtk-6.2/vtkABI.h
  /usr/include/vtk-6.2/vtkAbstractArray.h
+ /usr/include/vtk-6.2/vtkAbstractMapper.h
+ /usr/include/vtk-6.2/vtkAbstractMapper3D.h
+ /usr/include/vtk-6.2/vtkActor.h
+ /usr/include/vtk-6.2/vtkActor2D.h
+ /usr/include/vtk-6.2/vtkActorCollection.h
  /usr/include/vtk-6.2/vtkAlgorithm.h
+ /usr/include/vtk-6.2/vtkAlgorithmOutput.h
+ /usr/include/vtk-6.2/vtkAppendPolyData.h
  /usr/include/vtk-6.2/vtkArrayIterator.h
  /usr/include/vtk-6.2/vtkArrayIteratorTemplate.h
  /usr/include/vtk-6.2/vtkArrayIteratorTemplate.txx
@@ -226,14 +233,19 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/include/vtk-6.2/vtkAutoInit.h
  /usr/include/vtk-6.2/vtkCell.h
  /usr/include/vtk-6.2/vtkCellArray.h
+ /usr/include/vtk-6.2/vtkCellData.h
  /usr/include/vtk-6.2/vtkCellLinks.h
  /usr/include/vtk-6.2/vtkCellType.h
  /usr/include/vtk-6.2/vtkCellTypes.h
+ /usr/include/vtk-6.2/vtkCollection.h
+ /usr/include/vtk-6.2/vtkCommand.h
  /usr/include/vtk-6.2/vtkCommonCoreModule.h
  /usr/include/vtk-6.2/vtkCommonDataModelModule.h
  /usr/include/vtk-6.2/vtkCommonExecutionModelModule.h
  /usr/include/vtk-6.2/vtkCommonInformationKeyManager.h
+ /usr/include/vtk-6.2/vtkCommonMathModule.h
  /usr/include/vtk-6.2/vtkConfigure.h
+ /usr/include/vtk-6.2/vtkCoordinate.h
  /usr/include/vtk-6.2/vtkDataArray.h
  /usr/include/vtk-6.2/vtkDataArrayTemplate.h
  /usr/include/vtk-6.2/vtkDataArrayTemplate.txx
@@ -243,12 +255,18 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/include/vtk-6.2/vtkDataReader.h
  /usr/include/vtk-6.2/vtkDataSet.h
  /usr/include/vtk-6.2/vtkDataSetAttributes.h
+ /usr/include/vtk-6.2/vtkDataSetMapper.h
+ /usr/include/vtk-6.2/vtkDataSetSurfaceFilter.h
  /usr/include/vtk-6.2/vtkDataWriter.h
  /usr/include/vtk-6.2/vtkDebugLeaksManager.h
  /usr/include/vtk-6.2/vtkFieldData.h
  /usr/include/vtk-6.2/vtkFiltersCoreModule.h
  /usr/include/vtk-6.2/vtkFiltersGeneralModule.h
+ /usr/include/vtk-6.2/vtkFiltersGeometryModule.h
+ /usr/include/vtk-6.2/vtkFiltersModelingModule.h
+ /usr/include/vtk-6.2/vtkFiltersSourcesModule.h
  /usr/include/vtk-6.2/vtkFloatArray.h
+ /usr/include/vtk-6.2/vtkFollower.h
  /usr/include/vtk-6.2/vtkIOCoreModule.h
  /usr/include/vtk-6.2/vtkIOGeometryModule.h
  /usr/include/vtk-6.2/vtkIOImageModule.h
@@ -268,8 +286,21 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/include/vtk-6.2/vtkInformationKey.h
  /usr/include/vtk-6.2/vtkInformationVector.h
  /usr/include/vtk-6.2/vtkIntArray.h
+ /usr/include/vtk-6.2/vtkInteractionStyleModule.h
+ /usr/include/vtk-6.2/vtkInteractorObserver.h
+ /usr/include/vtk-6.2/vtkInteractorStyle.h
+ /usr/include/vtk-6.2/vtkInteractorStyleRubberBandPick.h
+ /usr/include/vtk-6.2/vtkInteractorStyleTrackballCamera.h
+ /usr/include/vtk-6.2/vtkLODActor.h
+ /usr/include/vtk-6.2/vtkLeaderActor2D.h
+ /usr/include/vtk-6.2/vtkLineSource.h
+ /usr/include/vtk-6.2/vtkLookupTable.h
  /usr/include/vtk-6.2/vtkMappedDataArray.h
  /usr/include/vtk-6.2/vtkMappedDataArray.txx
+ /usr/include/vtk-6.2/vtkMapper.h
+ /usr/include/vtk-6.2/vtkMath.h
+ /usr/include/vtk-6.2/vtkMathConfigure.h
+ /usr/include/vtk-6.2/vtkMatrix4x4.h
  /usr/include/vtk-6.2/vtkOBJReader.h
  /usr/include/vtk-6.2/vtkOStrStreamWrapper.h
  /usr/include/vtk-6.2/vtkOStreamWrapper.h
@@ -284,19 +315,36 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/include/vtk-6.2/vtkPoints.h
  /usr/include/vtk-6.2/vtkPolyData.h
  /usr/include/vtk-6.2/vtkPolyDataAlgorithm.h
+ /usr/include/vtk-6.2/vtkPolyDataMapper.h
  /usr/include/vtk-6.2/vtkPolyDataNormals.h
  /usr/include/vtk-6.2/vtkPolyDataReader.h
  /usr/include/vtk-6.2/vtkPolyDataWriter.h
+ /usr/include/vtk-6.2/vtkPolygon.h
+ /usr/include/vtk-6.2/vtkProp.h
+ /usr/include/vtk-6.2/vtkProp3D.h
+ /usr/include/vtk-6.2/vtkPropCollection.h
+ /usr/include/vtk-6.2/vtkProperty.h
+ /usr/include/vtk-6.2/vtkProperty2D.h
+ /usr/include/vtk-6.2/vtkRenderer.h
+ /usr/include/vtk-6.2/vtkRendererCollection.h
+ /usr/include/vtk-6.2/vtkRenderingAnnotationModule.h
+ /usr/include/vtk-6.2/vtkRenderingCoreModule.h
+ /usr/include/vtk-6.2/vtkRenderingFreeTypeModule.h
+ /usr/include/vtk-6.2/vtkRenderingLODModule.h
  /usr/include/vtk-6.2/vtkSTLReader.h
  /usr/include/vtk-6.2/vtkSTLWriter.h
+ /usr/include/vtk-6.2/vtkScalarsToColors.h
  /usr/include/vtk-6.2/vtkSetGet.h
  /usr/include/vtk-6.2/vtkSmartPointer.h
  /usr/include/vtk-6.2/vtkSmartPointerBase.h
  /usr/include/vtk-6.2/vtkSortDataArray.h
+ /usr/include/vtk-6.2/vtkSphereSource.h
  /usr/include/vtk-6.2/vtkStdString.h
  /usr/include/vtk-6.2/vtkStructuredData.h
  /usr/include/vtk-6.2/vtkStructuredGrid.h
  /usr/include/vtk-6.2/vtkSystemIncludes.h
+ /usr/include/vtk-6.2/vtkTextProperty.h
+ /usr/include/vtk-6.2/vtkTexture.h
  /usr/include/vtk-6.2/vtkTimeStamp.h
  /usr/include/vtk-6.2/vtkType.h
  /usr/include/vtk-6.2/vtkTypeTemplate.h
@@ -306,12 +354,18 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/include/vtk-6.2/vtkTypedDataArrayIterator.h
  /usr/include/vtk-6.2/vtkUnicodeString.h
  /usr/include/vtk-6.2/vtkUnsignedCharArray.h
+ /usr/include/vtk-6.2/vtkUnstructuredGrid.h
+ /usr/include/vtk-6.2/vtkUnstructuredGridBase.h
  /usr/include/vtk-6.2/vtkVariant.h
  /usr/include/vtk-6.2/vtkVariantCast.h
  /usr/include/vtk-6.2/vtkVariantInlineOperators.h
+ /usr/include/vtk-6.2/vtkVectorText.h
  /usr/include/vtk-6.2/vtkVersion.h
  /usr/include/vtk-6.2/vtkVersionMacros.h
  /usr/include/vtk-6.2/vtkVertexGlyphFilter.h
+ /usr/include/vtk-6.2/vtkViewport.h
+ /usr/include/vtk-6.2/vtkVolume.h
+ /usr/include/vtk-6.2/vtkVolumeCollection.h
  /usr/include/vtk-6.2/vtkWeakPointerBase.h
  /usr/include/vtk-6.2/vtkWin32Header.h
  /usr/include/vtk-6.2/vtkWriter.h
@@ -345,6 +399,7 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/local/include/pcl-1.9/pcl/cloud_iterator.h
  /usr/local/include/pcl-1.9/pcl/common/angles.h
  /usr/local/include/pcl-1.9/pcl/common/centroid.h
+ /usr/local/include/pcl-1.9/pcl/common/colors.h
  /usr/local/include/pcl-1.9/pcl/common/common.h
  /usr/local/include/pcl-1.9/pcl/common/common_headers.h
  /usr/local/include/pcl-1.9/pcl/common/concatenate.h
@@ -387,6 +442,7 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/local/include/pcl-1.9/pcl/filters/statistical_outlier_removal.h
  /usr/local/include/pcl-1.9/pcl/filters/voxel_grid.h
  /usr/local/include/pcl-1.9/pcl/for_each_type.h
+ /usr/local/include/pcl-1.9/pcl/geometry/planar_polygon.h
  /usr/local/include/pcl-1.9/pcl/impl/cloud_iterator.hpp
  /usr/local/include/pcl-1.9/pcl/impl/instantiate.hpp
  /usr/local/include/pcl-1.9/pcl/impl/pcl_base.hpp
@@ -495,3 +551,23 @@ CMakeFiles/pcl_utils.dir/src/main.cpp.o
  /usr/local/include/pcl-1.9/pcl/surface/impl/gp3.hpp
  /usr/local/include/pcl-1.9/pcl/surface/impl/reconstruction.hpp
  /usr/local/include/pcl-1.9/pcl/surface/reconstruction.h
+ /usr/local/include/pcl-1.9/pcl/visualization/area_picking_event.h
+ /usr/local/include/pcl-1.9/pcl/visualization/boost.h
+ /usr/local/include/pcl-1.9/pcl/visualization/common/actor_map.h
+ /usr/local/include/pcl-1.9/pcl/visualization/common/common.h
+ /usr/local/include/pcl-1.9/pcl/visualization/common/impl/common.hpp
+ /usr/local/include/pcl-1.9/pcl/visualization/common/impl/shapes.hpp
+ /usr/local/include/pcl-1.9/pcl/visualization/common/ren_win_interact_map.h
+ /usr/local/include/pcl-1.9/pcl/visualization/common/shapes.h
+ /usr/local/include/pcl-1.9/pcl/visualization/eigen.h
+ /usr/local/include/pcl-1.9/pcl/visualization/impl/pcl_visualizer.hpp
+ /usr/local/include/pcl-1.9/pcl/visualization/impl/point_cloud_color_handlers.hpp
+ /usr/local/include/pcl-1.9/pcl/visualization/impl/point_cloud_geometry_handlers.hpp
+ /usr/local/include/pcl-1.9/pcl/visualization/interactor_style.h
+ /usr/local/include/pcl-1.9/pcl/visualization/keyboard_event.h
+ /usr/local/include/pcl-1.9/pcl/visualization/mouse_event.h
+ /usr/local/include/pcl-1.9/pcl/visualization/pcl_visualizer.h
+ /usr/local/include/pcl-1.9/pcl/visualization/point_cloud_color_handlers.h
+ /usr/local/include/pcl-1.9/pcl/visualization/point_cloud_geometry_handlers.h
+ /usr/local/include/pcl-1.9/pcl/visualization/point_cloud_handlers.h
+ /usr/local/include/pcl-1.9/pcl/visualization/point_picking_event.h
