@@ -134,8 +134,60 @@ public:
         	v.push_back(t);
         }
         return v;
+	}
+
+    static pcl::PointCloud<pcl::PointXYZ> pointCloud2ToPclXYZ(const pcl::PCLPointCloud2& p)
+	{
+        pcl::PointCloud<pcl::PointXYZ> cloud;
+        for(int i=0;i<p.row_step;i+=p.point_step)
+        {
+        	vector<float> t;
+        	for(int j=0;j<3;j++)
+        	{
+         		if(p.fields[j].count==0)
+        		{
+        			continue;
+        		}
+    		    float x;
+        		memcpy(&x,&p.data[i+p.fields[j].offset],sizeof(float));
+        		t.push_back(x);
+        	}
+        	cloud.points.push_back(PointXYZ(t[0],t[1],t[2]));
+        }
+        return cloud;
 	}	
 
+
+    static pcl::PointCloud<pcl::PointXYZRGB> pointCloud2ToPclXYZRGB(const pcl::PCLPointCloud2& p)
+	{
+        pcl::PointCloud<pcl::PointXYZRGB> cloud;
+        for(int i=0;i<p.row_step;i+=p.point_step)
+        {
+        	vector<float> t;
+        	for(int j=0;j<3;j++)
+        	{
+         		if(p.fields[j].count==0)
+        		{
+        			continue;
+        		}
+    		    float x;
+        		memcpy(&x,&p.data[i+p.fields[j].offset],sizeof(float));
+        		t.push_back(x);
+        	}
+            float rgb_data;
+       		memcpy(&rgb_data,&p.data[i+p.fields[3].offset],sizeof(float));
+       		vector<int> c = splitRGBData(rgb_data);    
+	  	  	pcl::PointXYZRGB point;
+		    point.x = t[0];
+		    point.y = t[1];
+		    point.z = t[2];
+		    uint32_t rgb = (static_cast<uint32_t>(c[0]) << 16 |
+		              static_cast<uint32_t>(c[1]) << 8 | static_cast<uint32_t>(c[2]));
+		    point.rgb = *reinterpret_cast<float*>(&rgb);
+	  		cloud.push_back(point);    	
+        }
+        return cloud;
+	}	
 
 
 	/*****************************************************************************/
