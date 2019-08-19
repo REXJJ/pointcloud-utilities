@@ -48,22 +48,12 @@ int main()
    for(size_t i=0;i<cloud->points.size();i++)
    	cloud_np.push_back(cloud->points[i]);
 
-
-   for(size_t i=0;i<cloud_np.points.size();i++)
-   {
-      for(size_t j=0;j<sizeof(cloud_np.points[i])/sizeof(float);j++)
-      {
-         float x;
-         if(j==4) continue;
-         if(j<4){
-         memcpy(&x,&cloud_np.points[i]+sizeof(float)*j,sizeof(float));
-         std::cout<<x<<" ";
-      }
-         uchar y;
-         memcpy(&y,&cloud_np.points[i]+sizeof(uchar)*j,sizeof(uchar));
-         std::cout<<y<<" ";
-      }
-      std::cout<<endl;
-   }
+   vector<vector<double> > v_xyz = PCLUtilities::pclToVector(cloud_np);
+   MatrixXf m_xyz1rgb0=PCLUtilities::pclToEigen(cloud_np);
+   pcl::PCLPointCloud2 cloud2 = PCLUtilities::pclToPointCloud2(cloud_np);
+   vector<vector<float> > v_xyzrgb = PCLUtilities::pointCloud2ToVec(cloud2);
+   PCLUtilities::pclToCSV(cloud_np,"test.csv");
+   PCLUtilities::pclToXYZ(cloud_np,"test.xyz");
+   PCLUtilities::visualizePointCloud(cloud_np);
    return (0);
 }

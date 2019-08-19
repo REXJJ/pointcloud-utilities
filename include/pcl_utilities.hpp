@@ -49,32 +49,15 @@ class PCLUtilities
 {  
 public:
 
-    static vector<int> splitChannels(float channels)
-    {
-	   	uint32_t data = static_cast<uint32_t>(channels);
-	   	vector<int> d;
-	   	uint32_t p=1,temp=data;
-	    while(temp)
-	   	{
-	   		d.push_back((data>>p) & 0x0000ff);
-	   		temp=temp>>p;
-	   		p=p*8;
-	   	}
-	   	reverse(d.begin(),d.end());
-	   	return d;   	
-    }
-
     static vector<int> splitRGBData(float rgb)
     {
-	   	uint32_t data = static_cast<uint32_t>(rgb);
+	   	uint32_t data = *reinterpret_cast<int*>(&rgb);
 	   	vector<int> d;
-	   	uint32_t p=1;
+	   	int a[3]={16,8,1};
 	    for(int i=0;i<3;i++)
 	   	{
-	   		d.push_back((data>>p) & 0x0000ff);
-	   		p=p*8;
+	   		d.push_back((data>>a[i]) & 0x0000ff);
 	   	}
-	   	reverse(d.begin(),d.end());
 	   	return d;
     }
 
@@ -98,21 +81,23 @@ public:
 	    return v;
 	}
 
-    template <typename PointT> static MatrixXd pclToEigen(const pcl::PointCloud<PointT>& p)
+    template <typename PointT> static MatrixXf pclToEigen(const pcl::PointCloud<PointT>& p)
 	{
-		PointT x;
-		MatrixXd m(p.points.size(),pointsToVector(p.points[0]).size());
-		for(size_t i=0;i<p.points.size();i++){
-			vector<double> d = pointsToVector(p.points[i]);
-			for(size_t j=0;j<d.size();j++)
-				m(i,j)=d[j];		
-		}
-	    return m;
+        MatrixXf m = p.getMatrixXfMap().transpose();
+        if(m.cols()<5) return m;
+        for(int i=0;i<m.rows();i++)
+        		{
+        			vector<int> colors = splitRGBData(double(m(i,4)));
+        			m(i,4) = float(colors[0]); 
+        			m(i,5) = float(colors[1]);
+        			m(i,6) = float(colors[2]);
+        		}
+        return m;
 	}
 
     template <typename PointT> static pcl::PCLPointCloud2 pclToPointCloud2(const pcl::PointCloud<PointT>& p)
 	{
-		pcl::PCLPointCloud2 cloud;; 
+		pcl::PCLPointCloud2 cloud;
 		pcl::toPCLPointCloud2(p,cloud);
 		return cloud;
 	}	
@@ -128,17 +113,24 @@ public:
         for(int i=0;i<p.row_step;i+=p.point_step)
         {
         	vector<float> t;
-        	for(int j=0;;j++)
+        	for(int j=0;j<3;j++)
         	{
-        		if(p.fields[j].count==0)
+         		if(p.fields[j].count==0)
         		{
         			continue;
         		}
     		    float x;
         		memcpy(&x,&p.data[i+p.fields[j].offset],sizeof(float));
         		t.push_back(x);
-        		if(p.fields[j].offset+2>=p.point_step) break;
         	}
+       		if(p.point_step>16)
+       		{
+       			float rgb;
+       			memcpy(&rgb,&p.data[i+p.fields[3].offset],sizeof(float));
+       			vector<int> c = splitRGBData(rgb);
+       			for(int k=0;k<3;k++)
+       				t.push_back(float(c[k]));
+       		}        	
         	v.push_back(t);
         }
         return v;
@@ -154,7 +146,7 @@ public:
 	{
 		ofstream f;
 		f.open(filename);
-		MatrixXd v = pclToEigen<PointT>(p);
+		MatrixXf v = pclToEigen<PointT>(p);
 		for(int i=0;i<v.rows();i++)
 		{
 			for(int j=0;j<v.cols()-1;j++)
@@ -168,16 +160,15 @@ public:
 	{
 		ofstream f;
 		f.open(filename);
-		MatrixXd v = pclToEigen<PointT>(p);
+		MatrixXf v = pclToEigen<PointT>(p);
 		for(int i=0;i<v.rows();i++)
 		{
-			for(int j=0;j<v.cols()-1;j++)
+			for(int j=0;j<2;j++)
 				f<<v(i,j)<<",";
-			f<<v(i,v.cols()-1)<<"\n";
+			f<<v(i,2)<<"\n";
 		}
 		f.close();
 	}
-
 
 	static void xyzToPcd (const string &input_file, const string &output_file)
 	{
@@ -256,34 +247,34 @@ public:
 
 	template <typename PointT> static void visualizePointCloud(const pcl::PointCloud<PointT>& cloud)
 	{
-		  pcl::visualization::PCLVisualizer::Ptr viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
-		  viewer->setBackgroundColor (0, 0, 0);
-		  viewer->addPointCloud<PointT> (cloud.makeShared(), "sample cloud");
-		  viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "sample cloud");
-		  viewer->addCoordinateSystem (1.0);
-		  viewer->initCameraParameters ();
-		  while (!viewer->wasStopped ())
-		  {
-		    viewer->spinOnce (100);
-		    std::this_thread::sleep_for(100ms);
-		  }
+    	pcl::visualization::PCLVisualizer::Ptr viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
+		viewer->setBackgroundColor (0, 0, 0);
+		viewer->addPointCloud<PointT> (cloud.makeShared(), "sample cloud");
+		viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "sample cloud");
+		viewer->addCoordinateSystem (1.0);
+		viewer->initCameraParameters ();
+		while (!viewer->wasStopped ())
+		{
+		  	viewer->spinOnce (100);
+		  	std::this_thread::sleep_for(100ms);
+		}
 	}
 
 	static void visualizeMesh(pcl::PolygonMesh triangles)
 	{
-		  pcl::visualization::PCLVisualizer::Ptr viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
-		  viewer->setBackgroundColor (0, 0, 0);
-		  viewer->addPolygonMesh(triangles,"meshes",0);
-		  viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "meshes");
-		  viewer->addCoordinateSystem (1.0);
-		  viewer->initCameraParameters ();
-		  //viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR,0.7, 0.7, 0,"meshes"); 
-          viewer->setRepresentationToWireframeForAllActors(); 
-		  while (!viewer->wasStopped ())
-		  {
+		pcl::visualization::PCLVisualizer::Ptr viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
+		viewer->setBackgroundColor (0, 0, 0);
+		viewer->addPolygonMesh(triangles,"meshes",0);
+		viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "meshes");
+		viewer->addCoordinateSystem (1.0);
+		viewer->initCameraParameters ();
+		//viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR,0.7, 0.7, 0,"meshes"); 
+        viewer->setRepresentationToWireframeForAllActors(); 
+		while (!viewer->wasStopped ())
+		{
 		    viewer->spinOnce (100);
 		    std::this_thread::sleep_for(100ms);
-		  }
+		}
 	}
 };
 
