@@ -1,5 +1,5 @@
 # PointCloudUtilities
-This is a header file that provides some utility functions for operating on point clouds.
+This is a header file that provides some utility functions for operating on point clouds like converting it to an Eigen Matrix, standard vector, saving as CSV, visualizing it, etc.
 
 For easy reference, the functions provided with this file are:
 
