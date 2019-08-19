@@ -447,38 +447,11 @@ USB_10_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libusb-1.0.so
 //The directory containing VTKConfig.cmake
 VTK_DIR:PATH=/usr/lib/cmake/vtk-6.2
 
-//The directory containing a CMake configuration file for cpp_common.
-cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
-
-//The directory containing a CMake configuration file for geometry_msgs.
-geometry_msgs_DIR:PATH=/opt/ros/kinetic/share/geometry_msgs/cmake
-
-//Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/librostime.so
-
-//The directory containing a CMake configuration file for message_runtime.
-message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
-
 //Value Computed by CMake
 pcl_utils_BINARY_DIR:STATIC=/home/rex/Desktop/REX_WORK_SPACE/PointCloudUtilities/build
 
 //Value Computed by CMake
 pcl_utils_SOURCE_DIR:STATIC=/home/rex/Desktop/REX_WORK_SPACE/PointCloudUtilities
-
-//The directory containing a CMake configuration file for roscpp_serialization.
-roscpp_serialization_DIR:PATH=/opt/ros/kinetic/share/roscpp_serialization/cmake
-
-//The directory containing a CMake configuration file for roscpp_traits.
-roscpp_traits_DIR:PATH=/opt/ros/kinetic/share/roscpp_traits/cmake
-
-//The directory containing a CMake configuration file for rostime.
-rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
-
-//The directory containing a CMake configuration file for sensor_msgs.
-sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
-
-//The directory containing a CMake configuration file for std_msgs.
-std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
 
 
 ########################
