@@ -293,6 +293,15 @@ public:
 		return cloud;
     } 
 
+	static void saveMesh(const pcl::PolygonMesh& triangles,const string &filename)
+    {
+    	if(pcl::io::savePolygonFileSTL(filename,triangles)==false)
+    	{
+    		PCL_ERROR("Could not save the stl file...\n");
+    	}
+    } 
+
+
 	/*******************************************************************/
 	//Visualization Utilities
 	/******************************************************************/
